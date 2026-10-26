@@ -84,6 +84,19 @@ In HTTP, only the client can start a conversation. The server can’t send anyth
 
 ## Question 6
 **Answer:**
+
+**1:**
+
+**Caching Proxy**: the university server sits on the users’ side and gets packages for them. The first time a package is downloaded, it’s saved, so the next users get it fast from the local server without going to the main servers. This saves internet bandwidth and makes downloads quicker.
+
+**2:**
+
+**Load Balancer:** this proxy sits on the server side. It looks at where each request comes from and sends it to the nearest or most suitable server, for example users from Asia to the Asia server. CDNs work in a similar way, which gives users lower delay and spreads the load between servers.
+
+**3:**
+
+**Authentication Proxy:** the old service is hard to change, so a proxy is put in front of it. Every request first goes to the proxy, which checks the user’s login. Only valid requests are passed on to the old service, so it gets authentication without changing its code.
+
 ## ⚠️ Disclaimer
 
 I used AI to create the template and image used in Q1 and Q3

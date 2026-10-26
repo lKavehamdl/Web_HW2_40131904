@@ -64,11 +64,14 @@ In HTTP, only the client can start a conversation. The server can’t send anyth
 ## Question 4
 
 **Answer:**
+
+![Diagram](images/Q4.png)
+
 ## Question 5
 **Answer:**
 ## Question 6
 **Answer:**
 ## ⚠️ Disclaimer
 
-I used AI to create the template and image used in Q1
+I used AI to create the template and image used in Q1 and Q3
 .

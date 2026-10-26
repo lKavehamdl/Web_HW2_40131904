@@ -69,6 +69,19 @@ In HTTP, only the client can start a conversation. The server can’t send anyth
 
 ## Question 5
 **Answer:**
+
+1: 500 Internal Server Error or 503 Service Unvailable should be used based on database is crashing when data arives or the entire database is down
+
+2: 401 Unauthorized or 404 Not found should be used based on we are accessing a privilaged page with that user or we just want to login and the user doesn't exist, although 404 is used for pages that doesn't exist.
+
+3: 301 Permanently Moved since the move is permanent to a new location
+
+4: 429 Too Many Requests, this status code is used when rate limiter tirggers and limits requests from useers
+
+5: 200 OK
+
+6: 403 Forbidden, we are living with this one 
+
 ## Question 6
 **Answer:**
 ## ⚠️ Disclaimer

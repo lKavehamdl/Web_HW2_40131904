@@ -19,9 +19,17 @@
 ## Question 1
 
 
-**Answer:**
 
 
+**Answer:**Differences of HTTP versions is in the table below:
+
+![Diagram](images/Q1.png)
+
+And for "Why does HTTP/3 use UDP?":
+
+TCP treats all data as one single stream. If one packet is lost, everything behind it has to wait until it is sent again. This is called head-of-line blocking, and in HTTP/2 it slows down every file on the page, even unrelated ones. TCP is also very hard to change, because it is built into operating systems and network devices.
+
+UDP is simple and almost every network lets it through, so QUIC was built on top of it. QUIC adds reliability, ordering, congestion control and encryption by itself, but for each stream separately. This means a lost packet only stops its own stream.
 
 ## Question 2
 

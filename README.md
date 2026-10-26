@@ -39,7 +39,27 @@ A: In stateless communication, the server doesn’t remember anything about earl
 
 B: HTTP is a stateless protocol. The server treats every request as new, so on its own it can’t remember things like who is logged in or what’s in your shopping cart. To fix this, HTTP uses a few methods like cookies or tokens.
 ## Question 3
-**Answer:** 
+**Answer:**
+
+**A:** 
+
+In HTTP, only the client can start a conversation. The server can’t send anything on its own.This becomes a problem when the server has new data at an unexpected time, like a new chat message, an alert, or an event that another system should know about.
+
+**B:** 
+
+**Short polling:** The client sends a request to the server at fixed intervals and asks “is there anything new?”. It’s very simple and works everywhere, but most responses are empty. This wastes bandwidth and server resources, and the data still arrives with some delay.
+
+**Long polling:** The client sends a request, but the server doesn’t answer right away. It keeps the request open until new data is ready, then responds, and the client immediately sends a new request. This gives almost real-time updates with fewer empty responses, but every message still needs a new request, and holding many open connections is heavy for the server.
+
+**Server-Sent Events (SSE):** The client opens one normal HTTP connection, and the server keeps it open and sends events through it whenever it wants. It’s built into browsers and reconnects automatically. Its limit is that it’s one-way only, so it fits notifications and live feeds better than chat.
+
+**WebSocket:** The connection starts as HTTP and then upgrades to the WebSocket protocol with a 101 response. After that, client and server both can send messages at any time over the same connection, with very little overhead. This makes it the most common choice for chat, online games and live dashboards, but it needs more work on the server to manage connections.
+
+**Webhooks:** Instead of the client asking again and again, the roles are reversed. The receiver gives the service a URL, and when an event happens, the service itself sends an HTTP request (usually POST) to that URL. This is common between servers, for example a payment service telling a shop that a payment was successful. The receiver must have a public endpoint and should check that the requests are real.
+
+**Web Push:** Browsers and phones keep a connection to a push service. The server sends the message to this push service, and it delivers the notification to the user’s device, even when the website isn’t open. It’s great for alerts but not for frequent or large data.
+
+**WebTransport:** A newer option based on HTTP/3 and QUIC. Like WebSocket, it allows two-way communication, but it supports multiple streams and can send data without strict ordering, so one lost packet doesn’t block everything. It’s still new, so browser and server support is more limited.
 
 ## Question 4
 

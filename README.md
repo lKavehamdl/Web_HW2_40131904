@@ -35,9 +35,13 @@ UDP is simple and almost every network lets it through, so QUIC was built on top
 
 **Answer:**
 
-A: In stateless communication, the server doesn’t remember anything about earlier requests. Each request is independent and must carry all the information the server needs. In stateful communication, the server keeps information about the client between requests, so it knows what happened before. Stateless systems are simpler and easier to scale, while stateful systems can continue a conversation but use more server resources.
+**A:**
 
-B: HTTP is a stateless protocol. The server treats every request as new, so on its own it can’t remember things like who is logged in or what’s in your shopping cart. To fix this, HTTP uses a few methods like cookies or tokens.
+ In stateless communication, the server doesn’t remember anything about earlier requests. Each request is independent and must carry all the information the server needs. In stateful communication, the server keeps information about the client between requests, so it knows what happened before. Stateless systems are simpler and easier to scale, while stateful systems can continue a conversation but use more server resources.
+
+**B:**
+
+ HTTP is a stateless protocol. The server treats every request as new, so on its own it can’t remember things like who is logged in or what’s in your shopping cart. To fix this, HTTP uses a few methods like cookies or tokens.
 ## Question 3
 **Answer:**
 

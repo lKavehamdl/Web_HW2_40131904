@@ -49,4 +49,5 @@ UDP is simple and almost every network lets it through, so QUIC was built on top
 **Answer:**
 ## ⚠️ Disclaimer
 
-I used AI to create the template.
+I used AI to create the template and image used in Q1
+.
